@@ -20,7 +20,7 @@ for i in range(model.nu):
 with mujoco.viewer.launch_passive(model, data) as viewer:
     while viewer.is_running():
         # Swing motor 0 (the base) back and forth, like a wave
-        data.ctrl[3] = 1 * np.sin(data.time)
+        data.ctrl[1] = 1 * np.sin(data.time)
 
         mujoco.mj_step(model, data)    # advance the physics one small step
         viewer.sync()                  # update the picture
